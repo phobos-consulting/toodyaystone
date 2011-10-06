@@ -1,0 +1,55 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Base.master.cs" Inherits="Masters_Base" %>
+<%@ Register TagPrefix="pho" TagName="Footer" Src="~/Controls/Footer.ascx" %>
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>
+     <asp:ContentPlaceHolder ID="cphTitle" runat="server">
+          Toodyay Stone           
+      </asp:ContentPlaceHolder>
+    </title>
+    <asp:ContentPlaceHolder id="cphHeader" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="/Stylesheets/Default.css" media="all" type="text/css" rel="Stylesheet" />
+</head>
+
+
+<body id="HtmlBody1" class="main" <asp:ContentPlaceHolder id="cphBodyAttribute" runat="server"></asp:ContentPlaceHolder>>
+    <form id="mainForm" runat="server">
+   
+        <table cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="50%"></td>
+                <td id="middle_div">
+                
+                    <div id="header">
+                        <div id="logo_div">
+                            <a href="/"><img alt="Toodyay Stone" src="/images/logo.gif" border="0"/></a>
+                        </div>
+                    </div>
+                
+                    <div id="meat">
+                      <asp:ContentPlaceHolder id="cphMeat" runat="server">
+                      </asp:ContentPlaceHolder>
+                    </div>
+                    <div style="height: 20px;"></div>
+                    <div id="footer_topborder"></div>
+                    <div id="footer">
+                        <asp:ContentPlaceHolder ID="cphFooter" runat="server">
+                            <pho:Footer ID="Footer1" runat="server" />
+                          </asp:ContentPlaceHolder>
+                    </div>
+                        
+                </td>
+                <td width="50%"></td>
+            </tr>
+        </table>
+        <div id="bottom_spacer_div">
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,66 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using N2;
+using Telerik.WebControls;
+/// <summary>
+/// Summary description for EditableDatePicker
+/// </summary>
+public class EditableRadEditor : N2.Details.AbstractEditableAttribute 
+{
+
+    public EditableRadEditor(string title, int sortOrder)
+        : base(title, sortOrder)
+    {
+    }
+    protected override Control AddEditor(Control container)
+    {
+        
+        RadEditor control = new RadEditor();
+       
+        control.ToolsFile="~/RadControls/Editor/CustomTools.xml";
+        control.ConfigFile = "~/RadControls/Editor/ConfigFile.xml";
+        control.RadControlsDir = "~/RadControls";
+        control.Width = Unit.Pixel(600);
+        control.Height = Unit.Pixel(500);
+        control.ShowSubmitCancelButtons = false;
+        
+        
+
+        container.Controls.Add(control);
+
+        return control;
+        
+    }
+   
+
+    public override void UpdateEditor(N2.ContentItem item,Control control)
+    {
+        RadEditor radEditorControl = (RadEditor)control;
+        radEditorControl.Html = (string)item[this.Name];
+    }
+
+    public override bool UpdateItem(N2.ContentItem item,Control control)
+    {
+        try
+        {
+            RadEditor radEditorControl = (RadEditor)control;
+            
+            item[this.Name] = radEditorControl.Html;
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
+
+    }
+    
+	
+}

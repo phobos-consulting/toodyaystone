@@ -1,0 +1,30 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="ReferenceData.master.cs" Inherits="Masters_ReferenceData" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>
+     <asp:ContentPlaceHolder ID="cphTitle" runat="server">
+          <asp:Literal id="litTitle" runat="server"></asp:Literal>             
+      </asp:ContentPlaceHolder>
+    </title>
+    <link href="/Stylesheets/Default.css" media="all" type="text/css" rel="Stylesheet" />
+</head>
+<body class="reference_body">
+    <form id="form1" runat="server">
+    <asp:Image ID="TopImage" runat="server" CssClass="reference_image" />
+    <div class="reference_topline"></div>
+    <div class="reference_fields">
+        <asp:contentplaceholder id="Contentplaceholder1" runat="server">    
+            <div class="reference_header">
+                <asp:Literal ID="litHeader" runat="server"></asp:Literal>
+            </div>
+        </asp:contentplaceholder>
+    
+        <asp:contentplaceholder id="cphFields" runat="server">
+        </asp:contentplaceholder>
+    </div>
+    </form>
+</body>
+</html>

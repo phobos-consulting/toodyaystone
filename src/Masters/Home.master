@@ -1,0 +1,46 @@
+<%@ Master Language="C#" AutoEventWireup="true" EnableViewState="False" MasterPageFile="~/Masters/Base.master" CodeFile="Home.master.cs" Inherits="Masters_Home" %>
+<%@ Register TagPrefix="pho" TagName="Navigation" Src="~/Controls/Navigation.ascx" %>
+<%@ Register TagPrefix="pho" TagName="FeatureImages" Src="~/Controls/FeatureImagesRotator.ascx" %>
+<%@ Register TagPrefix="pho" TagName="Products" Src="~/Controls/Products.ascx" %>
+<%@ Register TagPrefix="pho" TagName="Content" Src="~/Controls/HomeContent.ascx" %>
+
+
+<asp:Content ContentPlaceHolderID="cphTitle" runat="server">
+      Toodyay Stone - <asp:Literal id="litTitle" runat="server"></asp:Literal>             
+</asp:Content>
+    
+<asp:Content ContentPlaceHolderID="cphMeat" runat="server">
+    <table cellpadding="0" cellspacing="0" height="550">
+        <tr>
+            <td id="leftcolumn">
+                <div id="home_navigation">
+                    <asp:ContentPlaceHolder ID="cphNavigation" runat="server">
+                        <pho:Navigation ID="Navigation" runat="server" />
+                    </asp:ContentPlaceHolder>
+                    <div id="navigation_footer"></div>
+                </div>
+                <div>
+                </div>
+            </td>
+            <td id="home_middlecolumn">
+                <div id="home_featureimages">
+                    <asp:ContentPlaceHolder ID="cphFeature" runat="server">
+                        <pho:FeatureImages ID="FeatureImages" runat="server" />
+                    </asp:ContentPlaceHolder>
+                     <div id="home_featureimages_footer"></div>
+                </div>
+                <div id="home_content">
+                    <asp:ContentPlaceHolder ID="cphContent" runat="server">
+                        <pho:Content ID="HomeContent" runat="server" />
+                    </asp:ContentPlaceHolder>
+                </div>
+            </td>
+            <td id="home_rightcolumn">
+                <asp:ContentPlaceHolder ID="cphList" runat="server">
+                    <pho:Products ID="ProductsList" runat="server" />
+                </asp:ContentPlaceHolder>
+            </td>
+        </tr>
+   </table>
+</asp:Content>
+                     

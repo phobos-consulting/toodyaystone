@@ -1,0 +1,44 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" MasterPageFile="~/Masters/Base.master" CodeFile="NonCMSContent.master.cs" Inherits="Masters_NonCMSContent" %>
+<%@ Register TagPrefix="pho" TagName="ContentTop" Src="~/Controls/ContentTop.ascx" %>
+
+<asp:Content ContentPlaceHolderID="cphTitle" runat="server">
+    Toodyay Stone - <asp:Literal id="litTitle" runat="server"></asp:Literal>   
+</asp:Content>
+
+
+<asp:Content ContentPlaceHolderID="cphBodyAttribute" runat="server">
+    <asp:Literal ID="BodyAttributeLiteral" runat="server"></asp:Literal>
+</asp:Content>
+    
+<asp:Content ContentPlaceHolderID="cphMeat" runat="server">
+    <table cellpadding="0" cellspacing="0" height="550" width="825">
+            <tr>
+                <td id="leftcolumn">
+                    <div id="navigation">
+                        <asp:ContentPlaceHolder ID="cphNavigation" runat="server">
+                           
+                        </asp:ContentPlaceHolder>
+                    </div>
+                    <div id="navigation_footer"></div>
+                </td>
+                <td id="rightcolumn">
+                    <div id="content_top">
+                         <asp:ContentPlaceHolder ID="cphContentTop" runat="server">
+                           <pho:ContentTop ID="ContentTop" runat="server" />
+                        </asp:ContentPlaceHolder>  
+                    </div>
+                    <div id="content">
+                       <asp:ContentPlaceHolder ID="cphContent" runat="server">
+                               
+                       </asp:ContentPlaceHolder>
+                   </div>
+                   <div id="content_additional">
+                       <asp:ContentPlaceHolder ID="cphAdditionalContent" runat="server">
+                           
+                        </asp:ContentPlaceHolder>
+                   </div>
+                </td>
+               
+            </tr>
+       </table>
+ </asp:Content>

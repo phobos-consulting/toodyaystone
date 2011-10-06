@@ -1,0 +1,58 @@
+<%@ Master Language="C#" AutoEventWireup="true" MasterPageFile="~/Masters/Base.master" CodeFile="Content.master.cs" Inherits="Masters_Content" %>
+<%@ Register TagPrefix="pho" TagName="Navigation" Src="~/Controls/Navigation.ascx" %>
+<%@ Register TagPrefix="pho" TagName="FeatureImages" Src="~/Controls/FeatureImagesRotator.ascx" %>
+<%@ Register TagPrefix="pho" TagName="Products" Src="~/Controls/Products.ascx" %>
+<%@ Register TagPrefix="pho" TagName="Content" Src="~/Controls/Content.ascx" %>
+<%@ Register TagPrefix="pho" TagName="ContentTop" Src="~/Controls/ContentTop.ascx" %>
+<%@ Register TagPrefix="pho" TagName="ImageAlbum" Src="~/Controls/ImageAlbum.ascx" %>
+
+
+<asp:Content ContentPlaceHolderID="cphTitle" runat="server">
+    Toodyay Stone - <asp:Literal id="litTitle" runat="server"></asp:Literal>   
+</asp:Content>
+
+<asp:Content ContentPlaceHolderID="cphHeader" runat="server">
+    <asp:Panel id="LightBoxPanel" runat="server">
+        <script type="text/javascript" src="/Javascript/prototype.lite.js"></script>
+        <script type="text/javascript" src="/Javascript/moo.fx.js"></script>
+        <script type="text/javascript" src="/Javascript/litebox-1.0.js"></script>
+        <link href="/Stylesheets/Lightbox.css" media="all" type="text/css" rel="Stylesheet" />
+    </asp:Panel>
+</asp:Content>
+
+<asp:Content ContentPlaceHolderID="cphBodyAttribute" runat="server">
+    <asp:Literal ID="BodyAttributeLiteral" runat="server"></asp:Literal>
+</asp:Content>
+    
+<asp:Content ContentPlaceHolderID="cphMeat" runat="server">
+    <table cellpadding="0" cellspacing="0" height="550">
+            <tr>
+                <td id="leftcolumn">
+                    <div id="navigation">
+                        <asp:ContentPlaceHolder ID="cphNavigation" runat="server">
+                            <pho:Navigation ID="Navigation" runat="server" />
+                        </asp:ContentPlaceHolder>
+                    </div>
+                    <div id="navigation_footer"></div>
+                </td>
+                <td id="rightcolumn">
+                    <div id="content_top">
+                         <asp:ContentPlaceHolder ID="cphContentTop" runat="server">
+                            <pho:ContentTop ID="ContentTop" runat="server" />
+                        </asp:ContentPlaceHolder>  
+                    </div>
+                    <div id="content">
+                       <asp:ContentPlaceHolder ID="cphContent" runat="server">
+                                <pho:Content ID="Content" runat="server" />
+                       </asp:ContentPlaceHolder>
+                   </div>
+                   <div id="content_additional">
+                       <asp:ContentPlaceHolder ID="cphAdditionalContent" runat="server">
+                            <pho:ImageAlbum id="ImageAlbum1" runat="server"></pho:ImageAlbum>
+                        </asp:ContentPlaceHolder>
+                   </div>
+                </td>
+               
+            </tr>
+       </table>
+ </asp:Content>
